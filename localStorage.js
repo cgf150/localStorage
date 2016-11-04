@@ -53,7 +53,11 @@ window.myStorage=(function(win,dom){
 		if(getVal==null){
 			return console.log('the localstorage did\'t have'+name);
 		}
-		return eval('('+getVal.split(':-:')[0]+')');
+		if((getVal.split(':-:')).lenght>1){
+			return eval('('+getVal.split(':-:')[0]+')');
+		}
+		return getVal.split(':-:')[0];
+		
 	}
 
 	//删除缓存
@@ -129,7 +133,7 @@ window.myStorage=(function(win,dom){
 	})();
 
 	fnRecycle();
-	
+
 	return {
 		set:fnSet,
 		get:fnGet,
