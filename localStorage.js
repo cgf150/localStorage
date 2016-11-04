@@ -128,6 +128,8 @@ window.myStorage=(function(win,dom){
 		}
 	})();
 
+	fnRecycle();
+	
 	return {
 		set:fnSet,
 		get:fnGet,
